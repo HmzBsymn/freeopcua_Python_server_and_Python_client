@@ -10,6 +10,10 @@ from opcua import Server, ua
 # 'OPC UA server' degiskeni olusturma
 sunucu = Server()
 
+#UYARI: Kütüphanenin kısıtlarından dolayı opcua server oluştururken IP atamaları 192.168.xx.xx gibi olamamaktadır.
+# IP atamaları için: 127.168.xx.xx şeklinde olmalıdır.
+# Ama bu kısıt sadece OPC UA server oluştururken vardır. Hali hazırda var olan bir OPC UA servera bağlanacak client kodu için bir IP kısıtlaması yoktur. 
+# Doğrudan OPC UA server in IP'sine bağlanabilir.
 # 'OPC UA baglanti adresini' 'server' olarak tanimlanan degiskene ayarlama
 url_adresi = ("opc.tcp://127.168.0.77:12345")
 sunucu.set_endpoint(url_adresi)
